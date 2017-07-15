@@ -20,7 +20,7 @@ class AllGifs extends React.Component {
     };
 
     onMoreClick() {
-        this.props.moreGifs(this.props.gifs.length);
+        this.props.moreGifs(this.props.search, this.props.gifs.length);
     }
 
     render() {
