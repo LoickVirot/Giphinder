@@ -4,7 +4,15 @@ body {
     font-family: sans-serif;
 }
 
+.btn {
+    cursor: pointer;
+}
+
 .all-gifs {
+    padding: 20px;
+}
+
+.all-gifs .gifs-list {
     padding: 20px;
 }
 
