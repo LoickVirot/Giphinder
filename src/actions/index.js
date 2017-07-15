@@ -5,6 +5,8 @@ import axios from 'axios';
 
 export const FETCH_GIFS = 'FETCH_GIFS';
 export const ACTIVE_SEARCH = 'ACTIVE_SEARCH';
+export const SELECT_GIF = 'SELECT_GIF';
+export const CLOSE_GIF_MODAL = 'CLOSE_GIF_MODAL';
 
 const API_KEY = '5ae052aa25754b00abb6811fb76d85f8';
 
@@ -23,5 +25,18 @@ export function activeSearch(term) {
     return {
         type: ACTIVE_SEARCH,
         payload: term
+    }
+}
+
+export function selectGif(gif) {
+    return {
+        type: SELECT_GIF,
+        payload: gif
+    }
+}
+
+export function closeGifModal() {
+    return {
+        type: CLOSE_GIF_MODAL
     }
 }

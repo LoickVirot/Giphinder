@@ -2,13 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import TitleGif from '../components/TitleGifs';
+import GifItem from "./GifItem";
 
 class AllGifs extends React.Component {
     renderGifs(gif) {
-        const splittedUrl = gif.images.fixed_height.url.split('://');
-        const imageUrl = 'https://' + splittedUrl[1];
         return (
-            <img key={gif.id} src={imageUrl} alt={gif.url} />
+            <GifItem gif={gif} key={gif.id}/>
         );
     };
 

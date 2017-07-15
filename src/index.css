@@ -1,9 +1,70 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 .all-gifs {
-  padding: 20px;
+    padding: 20px;
+}
+
+.modal-gif {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-gif img {
+    max-width: 700px;
+    margin: 150px auto auto;
+    border: 2px solid #FFF
+}
+
+.modal-gif .card {
+    max-width: 500px;
+    margin: 50px auto auto;
+}
+
+.gif-item {
+    cursor: pointer;
+}
+
+.close-btn {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.close-btn::before,
+.close-btn::after {
+    position: absolute;
+    content: '';
+    background: #FFFFFF;
+    height: 2px;
+    width: 30px;
+    transition: backgound 0.2s ease;
+}
+
+.close-btn:hover::before,
+.close-btn:hover::after {
+    background: #0275d8;
+    transition: backgound 0.2s ease;
+}
+
+.close-btn:before {
+    transform: translateX(-15px) translateY(15px) rotate(45deg);
+}
+
+.close-btn:after{
+    transform: translateX(-15px) translateY(15px) rotate(-45deg);
+}
+
+.modal-close {
+    position: absolute;
+    right: 50px;
+    top: 50px;
 }
