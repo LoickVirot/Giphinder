@@ -17,7 +17,7 @@ ReactDOM.render(
             <div>
                 <NavBar />
                 <Route path='/' component={Home} exact={true}/>
-                <Route path='/search/:term' component={SearchGifs} />
+                <Route path='/search/:term?' component={SearchGifs} />
             </div>
         </BrowserRouter>
     </Provider>,
