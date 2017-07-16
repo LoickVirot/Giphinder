@@ -1,7 +1,7 @@
 import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {fetchGifs, activeSearch} from '../actions/index';
+import {fetchGifs} from '../actions/index';
 
 class SearchBar extends React.Component {
 
@@ -18,18 +18,13 @@ class SearchBar extends React.Component {
     }
 
     onFormSubmit(event) {
-        event.preventDefault();
-
         // trigger action creator
         this.props.fetchGifs(this.state.term);
-        this.props.activeSearch(this.state.term);
-        this.setState({term: ''});
-
     }
 
     render() {
         return (
-            <form onSubmit={this.onFormSubmit} className="form-inline">
+            <form onSubmit={this.onFormSubmit} className="form-inline" action={`/search/${this.state.term}`} >
                 <div className="input-group">
                     <input
                         className="form-control"
@@ -47,7 +42,7 @@ class SearchBar extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({fetchGifs, activeSearch}, dispatch);
+    return bindActionCreators({fetchGifs}, dispatch);
 };
 
 export default connect(null, mapDispatchToProps)(SearchBar);

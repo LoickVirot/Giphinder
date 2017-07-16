@@ -35,13 +35,6 @@ export function moreGifs(term, offset) {
     }
 }
 
-export function activeSearch(term) {
-    return {
-        type: ACTIVE_SEARCH,
-        payload: term
-    }
-}
-
 export function selectGif(gif) {
     return {
         type: SELECT_GIF,
