@@ -15,8 +15,9 @@ class GifItem extends React.Component {
 
     render() {
         const gif = this.props.gif;
+        console.log(gif);
 
-        const splittedUrl = gif.images.fixed_height.url.split('://');
+        const splittedUrl = gif.images.fixed_width.url.split('://');
         const imageUrl = 'https://' + splittedUrl[1];
         return (
             <img

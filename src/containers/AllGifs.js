@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import {moreGifs, fetchGifs} from '../actions/index';
 
 import TitleGif from '../components/TitleGifs';
-import GifItem from "./GifItem";
+import GridLayout from '../components/GridLayout';
 
 class AllGifs extends React.Component {
     constructor(props) {
@@ -17,12 +17,6 @@ class AllGifs extends React.Component {
         this.props.fetchGifs(this.props.term);
     }
 
-    renderGifs(gif) {
-        return (
-            <GifItem gif={gif} key={gif.id}/>
-        );
-    };
-
     onMoreClick() {
         this.props.moreGifs(this.props.term, this.props.gifs.length);
     }
@@ -33,7 +27,7 @@ class AllGifs extends React.Component {
                 <TitleGif search={this.props.term} />
                 <hr/>
                 <div className="gifs-list">
-                    {this.props.gifs.map(this.renderGifs)}
+                    <GridLayout items={this.props.gifs} />
                 </div>
                 <button className="btn btn-primary more-button" onClick={this.onMoreClick}>Show more</button>
             </div>
