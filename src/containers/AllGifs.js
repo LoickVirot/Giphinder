@@ -35,7 +35,7 @@ class AllGifs extends React.Component {
                 <div className="gifs-list">
                     {this.props.gifs.map(this.renderGifs)}
                 </div>
-                <button className="btn btn-secondary" onClick={this.onMoreClick}>Show more</button>
+                <button className="btn btn-primary more-button" onClick={this.onMoreClick}>Show more</button>
             </div>
         );
     }
