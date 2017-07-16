@@ -9,13 +9,12 @@ class GifItem extends React.Component {
         this.onImageClick = this.onImageClick.bind(this);
     }
 
-    onImageClick(event) {
+    onImageClick() {
         this.props.selectGif(this.props.gif);
     }
 
     render() {
         const gif = this.props.gif;
-        console.log(gif);
 
         const splittedUrl = gif.images.fixed_width.url.split('://');
         const imageUrl = 'https://' + splittedUrl[1];
