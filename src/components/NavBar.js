@@ -21,7 +21,11 @@ class NavBar extends React.Component {
                             >Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a href="/search/" className="nav-link">Search</a>
+                            <NavLink
+                                to="/search"
+                                className="nav-link"
+                                activeClassName="selected"
+                            >Search</NavLink>
                         </li>
                     </ul>
                     <SearchBar />
